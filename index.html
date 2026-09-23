@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ananya, I am truly sorry... ❤️</title>
+  <title>Ananya, Please Listen... 🥹💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,8 +13,8 @@
     }
 
     body {
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Softer, slightly cooler background */
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #a1c4fd 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -22,188 +23,230 @@
       position: relative;
     }
 
-    /* Floating Icons (Hearth & Twinkle) Background */
-    .floating-icon {
+    /* Floating Background Elements */
+    .bg-icon {
       position: absolute;
-      animation: float 8s linear infinite; /* Slightly slower and smoother */
       user-select: none;
+      animation: floatUp 7s linear infinite;
       z-index: 1;
-      opacity: 0.8;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        transform: translateY(110vh) scale(0.6) rotate(0deg);
+        transform: translateY(105vh) rotate(0deg) scale(0.6);
         opacity: 0.8;
       }
-      50% {
-        opacity: 1;
-      }
       100% {
-        transform: translateY(-20vh) scale(1.4) rotate(360deg);
+        transform: translateY(-10vh) rotate(360deg) scale(1.2);
         opacity: 0;
       }
     }
 
-    /* Card Container - More elegant shadow and blur */
+    /* Main Card */
     .card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(15px);
-      padding: 40px 30px; /* Increased padding */
-      border-radius: 30px; /* More rounded */
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* Softer, wider shadow */
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-radius: 32px;
+      padding: 35px 25px;
       text-align: center;
-      max-width: 420px; /* Slightly wider */
+      max-width: 400px;
       width: 90%;
+      box-shadow: 0 20px 40px rgba(238, 156, 167, 0.4),
+                  0 0 0 1px rgba(255, 255, 255, 0.6) inset;
       z-index: 10;
-      transform: scale(0.9);
-      animation: popIn 0.7s ease-out forwards;
-      border: 1px solid rgba(255, 255, 255, 0.4); /* subtle inner border */
+      position: relative;
+      animation: cardPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
 
-    @keyframes popIn {
-      to {
-        transform: scale(1);
-      }
+    @keyframes cardPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
-    .gif-container {
-        margin-bottom: 25px; /* Added margin */
+    .badge {
+      display: inline-block;
+      background: #ffe3e8;
+      color: #ff477e;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
     }
 
-    .gif-container img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+    .gif-box {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 15px;
+      position: relative;
+    }
+
+    .gif-box img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for GIF */
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 20px rgba(255, 71, 126, 0.2);
     }
 
     h1 {
-      color: #333; /* More neutral dark color */
-      font-size: 30px;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-    
-    .arzu-signature {
-        color: #888;
-        font-size: 14px;
-        margin-top: -10px;
-        margin-bottom: 20px;
-        display: block;
+      font-family: 'Fredoka', sans-serif;
+      color: #ff477e;
+      font-size: 26px;
+      margin-bottom: 8px;
     }
 
     p {
       color: #555;
-      font-size: 16px; /* Slightly larger text */
-      line-height: 1.7;
-      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-weight: 600;
     }
 
-    /* Buttons - Refined style */
+    .message-text span {
+      color: #ff477e;
+      font-weight: 800;
+    }
+
+    /* Interactive Buttons */
     .btn-group {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 15px;
+      min-height: 50px;
       position: relative;
     }
 
     button {
-      padding: 14px 28px; /* Slightly larger */
+      font-family: 'Fredoka', sans-serif;
       font-size: 16px;
-      font-weight: bold;
+      padding: 12px 26px;
       border: none;
-      border-radius: 40px; /* More rounded */
+      border-radius: 25px;
       cursor: pointer;
-      transition: all 0.4s ease; /* Longer transition for smoother effect */
-      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
     }
 
     .btn-yes {
-      background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient button */
+      background: linear-gradient(45deg, #ff477e, #ff70a6);
       color: white;
-      box-shadow: 0 8px 25px rgba(255, 75, 43, 0.3);
+      box-shadow: 0 8px 20px rgba(255, 71, 126, 0.35);
     }
 
     .btn-yes:hover {
-      transform: translateY(-3px) scale(1.05); /* Slide up on hover */
-      box-shadow: 0 12px 30px rgba(255, 75, 43, 0.4);
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(255, 71, 126, 0.5);
     }
 
-    /* Success Screen - Elegant fade in */
-    .success-message {
+    .btn-no {
+      background: #f0f0f0;
+      color: #777;
+      position: absolute;
+      right: 20px;
+    }
+
+    /* Success Card Hidden by default */
+    .success-card {
       display: none;
-      animation: fadeIn 1s ease forwards;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
     }
 
-    .success-message h2 {
-      color: #ff416c;
-      font-size: 26px;
-      margin-bottom: 12px;
-      font-weight: 700;
+    .success-card h2 {
+      font-family: 'Fredoka', sans-serif;
+      color: #ff477e;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
-    
-    .final-hug {
-        display: block;
-        color: #ff416c;
-        font-size: 30px;
-        margin-top: 20px;
+
+    .besties-tag {
+      font-size: 18px;
+      color: #7052ff;
+      font-weight: 800;
+      margin-top: 10px;
+      display: block;
     }
   </style>
 </head>
 <body>
 
+  <!-- Main Request Card -->
   <div class="card" id="mainCard">
-    <div class="gif-container">
-      <!-- Cute, pleading GIF -->
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjk0ODl4ZzdhNDVwY2NzaWlkYm8yd3RocWNjM3UxeHFmNDl3d3g5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L95W4M46o838k/giphy.gif" alt="Please forgive me">
-    </div>
-    <h1>Dear Ananya,</h1>
-    <span class="arzu-signature">From: Arzu</span>
-    <p>Main janta hoon maine galati ki aur tumhein hurt kiya. Mujhe is baat ka bahut afsos hai. Please, mera ek "Sorry" accept kar lo na? Tumse zyada aur kuch bhi important nahi hai mere liye. ❤️</p>
+    <div class="badge">Aarzu & Ananya 👭</div>
     
-    <div class="btn-group">
-      <button class="btn-yes" onclick="forgiveMe()">Maaf kar diya, Arzu! 💖</button>
+    <div class="gif-box">
+      <!-- Cute begging friend GIF -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZydHZreGR2czNidThsb3M1cm03MGFvdXdwcnk1NXhhajYydmsyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L95W4M46o838k/giphy.gif" alt="Pleading Cute Cat">
+    </div>
+
+    <h1>Suno na Ananya... 🥺</h1>
+    
+    <p class="message-text">
+      Mujhse galti ho gayi, I know! Par apni sabse pyari bestie <span>Aarzu</span> ko aese naraaz karke kab tak rakhogi? Plz gussa thook do na! 💖
+    </p>
+
+    <div class="btn-group" id="btnGroup">
+      <button class="btn-yes" id="yesBtn" onclick="acceptSorry()">Maaf Kiya 💕</button>
+      <button class="btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">Nahi 😤</button>
     </div>
   </div>
 
-  <div class="card success-message" id="successCard">
-    <div class="gif-container">
-      <!-- Happy, hugging GIF -->
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGFjOGV1ejA0MndvNmFzNW0xa3A1YWhsMGVnaHl3Y3V3eW84NXB5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G3va31oEEnIkM/giphy.gif" alt="Happy ending">
+  <!-- Success Card -->
+  <div class="card success-card" id="successCard">
+    <div class="badge">Best Friends Forever 🌸</div>
+
+    <div class="gif-box">
+      <!-- Cute Friends Hugging GIF -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWU0aDhhbnMwdjhmdjgzNHlhazZpbnBtd25udTlwbXo1NThxbGNuNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PHZ7v9tfQu0o0/giphy.gif" alt="Happy Friends Hug">
     </div>
-    <h2>Thank You, Ananya! 🥰</h2>
-    <p>Main bahut khush hoon! You are truly amazing. Aage se bilkul dhyan rakhunga. Sabse pyari dost ho tum mere liye!</p>
-    <span class="final-hug">❤️🤗</span>
+
+    <h2>Yayyy! I Knew It! 🎉</h2>
+    <p>Thank you Anu! Tum waise bhi world ki sabse best friend ho. Ab jaldi se smile karo aur reply karo! 🥰✨</p>
+    
+    <span class="besties-tag">Aarzu ❤️ Ananya</span>
   </div>
 
   <script>
-    // Background Floating Icons Generator (Heats and Stars)
-    const icons = ['❤️', '✨', '💖', '⭐'];
-    function createIcon() {
+    // Create Cute Floating Hearts & Stars
+    const emojis = ['💖', '✨', '🌸', '🎀', '⭐'];
+    function createFloatingIcon() {
       const icon = document.createElement('div');
-      icon.classList.add('floating-icon');
-      icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
-      icon.style.color = Math.random() < 0.5 ? 'rgba(255, 100, 150, 0.7)' : 'rgba(255, 200, 100, 0.7)'; // Random colors
-      icon.style.fontSize = Math.random() * 20 + 20 + 'px'; // Varied sizes
+      icon.classList.add('bg-icon');
+      icon.innerText = emojis[Math.floor(Math.random() * emojis.length)];
       icon.style.left = Math.random() * 100 + 'vw';
-      icon.style.animationDuration = Math.random() * 4 + 6 + 's'; // Varied speed
+      icon.style.fontSize = (Math.random() * 15 + 18) + 'px';
+      icon.style.animationDuration = (Math.random() * 3 + 5) + 's';
       document.body.appendChild(icon);
 
       setTimeout(() => {
         icon.remove();
-      }, 10000);
+      }, 8000);
     }
-    setInterval(createIcon, 300);
+    setInterval(createFloatingIcon, 300);
 
-    // On Click Action
-    function forgiveMe() {
+    // Runaway "Nahi" Button Logic
+    function moveButton() {
+      const noBtn = document.getElementById('noBtn');
+      const card = document.getElementById('mainCard');
+      
+      const cardRect = card.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      // Calculate max allowed positions inside card
+      const maxX = cardRect.width - btnRect.width - 20;
+      const maxY = cardRect.height - btnRect.height - 20;
+
+      const randomX = Math.floor(Math.random() * maxX) - (cardRect.width / 2) + 50;
+      const randomY = Math.floor(Math.random() * maxY) - (cardRect.height / 2) + 50;
+
+      noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    // Success Action
+    function acceptSorry() {
       document.getElementById('mainCard').style.display = 'none';
       document.getElementById('successCard').style.display = 'block';
     }
