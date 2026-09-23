@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I am so sorry... 🥺</title>
+  <title>Ananya, I am truly sorry... ❤️</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Softer, slightly cooler background */
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -22,40 +22,43 @@
       position: relative;
     }
 
-    /* Floating Hearts Background */
-    .heart-bg {
+    /* Floating Icons (Hearth & Twinkle) Background */
+    .floating-icon {
       position: absolute;
-      color: rgba(255, 255, 255, 0.6);
-      animation: float 6s linear infinite;
-      font-size: 20px;
+      animation: float 8s linear infinite; /* Slightly slower and smoother */
       user-select: none;
       z-index: 1;
+      opacity: 0.8;
     }
 
     @keyframes float {
       0% {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(110vh) scale(0.6) rotate(0deg);
+        opacity: 0.8;
+      }
+      50% {
         opacity: 1;
       }
       100% {
-        transform: translateY(-10vh) scale(1.2);
+        transform: translateY(-20vh) scale(1.4) rotate(360deg);
         opacity: 0;
       }
     }
 
-    /* Card Container */
+    /* Card Container - More elegant shadow and blur */
     .card {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 30px 25px;
-      border-radius: 24px;
-      box-shadow: 0 15px 35px rgba(238, 156, 167, 0.4);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 40px 30px; /* Increased padding */
+      border-radius: 30px; /* More rounded */
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* Softer, wider shadow */
       text-align: center;
-      max-width: 380px;
+      max-width: 420px; /* Slightly wider */
       width: 90%;
       z-index: 10;
       transform: scale(0.9);
-      animation: popIn 0.6s ease-out forwards;
+      animation: popIn 0.7s ease-out forwards;
+      border: 1px solid rgba(255, 255, 255, 0.4); /* subtle inner border */
     }
 
     @keyframes popIn {
@@ -64,28 +67,41 @@
       }
     }
 
+    .gif-container {
+        margin-bottom: 25px; /* Added margin */
+    }
+
     .gif-container img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for GIF */
     }
 
     h1 {
-      color: #d63384;
-      font-size: 26px;
-      margin-bottom: 10px;
+      color: #333; /* More neutral dark color */
+      font-size: 30px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .arzu-signature {
+        color: #888;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+        display: block;
     }
 
     p {
       color: #555;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 25px;
+      font-size: 16px; /* Slightly larger text */
+      line-height: 1.7;
+      margin-bottom: 30px;
     }
 
-    /* Buttons */
+    /* Buttons - Refined style */
     .btn-group {
       display: flex;
       justify-content: center;
@@ -94,35 +110,50 @@
     }
 
     button {
-      padding: 12px 24px;
+      padding: 14px 28px; /* Slightly larger */
       font-size: 16px;
       font-weight: bold;
       border: none;
-      border-radius: 30px;
+      border-radius: 40px; /* More rounded */
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease; /* Longer transition for smoother effect */
+      letter-spacing: 0.5px;
     }
 
     .btn-yes {
-      background-color: #ff4b2b;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient button */
       color: white;
-      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.3);
+      box-shadow: 0 8px 25px rgba(255, 75, 43, 0.3);
     }
 
     .btn-yes:hover {
-      transform: scale(1.08);
-      background-color: #ff416c;
+      transform: translateY(-3px) scale(1.05); /* Slide up on hover */
+      box-shadow: 0 12px 30px rgba(255, 75, 43, 0.4);
     }
 
-    /* Success Screen Hide/Show */
+    /* Success Screen - Elegant fade in */
     .success-message {
       display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
     .success-message h2 {
       color: #ff416c;
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .final-hug {
+        display: block;
+        color: #ff416c;
+        font-size: 30px;
+        margin-top: 20px;
     }
   </style>
 </head>
@@ -130,41 +161,46 @@
 
   <div class="card" id="mainCard">
     <div class="gif-container">
-      <!-- Cute Sad Bear GIF -->
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxc20xbmdwbjFwZXh3b3k1MHBocXAzcXhyeDR4ODRrcGFxeDY1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378giAZvhPDVXg0U/giphy.gif" alt="Sad Bear">
+      <!-- Cute, pleading GIF -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjk0ODl4ZzdhNDVwY2NzaWlkYm8yd3RocWNjM3UxeHFmNDl3d3g5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L95W4M46o838k/giphy.gif" alt="Please forgive me">
     </div>
-    <h1>I'm So Sorry... 🥺</h1>
-    <p>Mera irada tumhe hurt karne ka bilkul nahi tha. Please gussa chhodo na? Main aage se dhyan rakhunga. Maaf kar do na please? ❤️</p>
+    <h1>Dear Ananya,</h1>
+    <span class="arzu-signature">From: Arzu</span>
+    <p>Main janta hoon maine galati ki aur tumhein hurt kiya. Mujhe is baat ka bahut afsos hai. Please, mera ek "Sorry" accept kar lo na? Tumse zyada aur kuch bhi important nahi hai mere liye. ❤️</p>
     
     <div class="btn-group">
-      <button class="btn-yes" onclick="forgiveMe()">Maaf Kiya 💖</button>
+      <button class="btn-yes" onclick="forgiveMe()">Maaf kar diya, Arzu! 💖</button>
     </div>
   </div>
 
   <div class="card success-message" id="successCard">
     <div class="gif-container">
-      <!-- Cute Happy Hug GIF -->
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzlsM3pza3QxNnIwdXg1bjZocWF2bGF1NHlyczBmcHlycjJ4OWszNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G3va31oEEnIkM/giphy.gif" alt="Happy Hug">
+      <!-- Happy, hugging GIF -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGFjOGV1ejA0MndvNmFzNW0xa3A1YWhsMGVnaHl3Y3V3eW84NXB5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G3va31oEEnIkM/giphy.gif" alt="Happy ending">
     </div>
-    <h2>Yayyy! Thank You! 🥰</h2>
-    <p>You are the best! I love you so much ❤️✨</p>
+    <h2>Thank You, Ananya! 🥰</h2>
+    <p>Main bahut khush hoon! You are truly amazing. Aage se bilkul dhyan rakhunga. Sabse pyari dost ho tum mere liye!</p>
+    <span class="final-hug">❤️🤗</span>
   </div>
 
   <script>
-    // Background Floating Hearts Generator
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart-bg');
-      heart.innerHTML = '❤️';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-      document.body.appendChild(heart);
+    // Background Floating Icons Generator (Heats and Stars)
+    const icons = ['❤️', '✨', '💖', '⭐'];
+    function createIcon() {
+      const icon = document.createElement('div');
+      icon.classList.add('floating-icon');
+      icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+      icon.style.color = Math.random() < 0.5 ? 'rgba(255, 100, 150, 0.7)' : 'rgba(255, 200, 100, 0.7)'; // Random colors
+      icon.style.fontSize = Math.random() * 20 + 20 + 'px'; // Varied sizes
+      icon.style.left = Math.random() * 100 + 'vw';
+      icon.style.animationDuration = Math.random() * 4 + 6 + 's'; // Varied speed
+      document.body.appendChild(icon);
 
       setTimeout(() => {
-        heart.remove();
-      }, 6000);
+        icon.remove();
+      }, 10000);
     }
-    setInterval(createHeart, 400);
+    setInterval(createIcon, 300);
 
     // On Click Action
     function forgiveMe() {
@@ -174,4 +210,3 @@
   </script>
 </body>
 </html>
-
